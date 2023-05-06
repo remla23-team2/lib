@@ -18,5 +18,8 @@
   "homepage": "https://github.com/remla23-team2/lib#readme",
   "devDependencies": {
     "jest": "^29.5.0"
-  }
+  },
+  "dependencies": {
+    "version-util": "file:."
+  }  
 }

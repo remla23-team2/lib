@@ -33,14 +33,15 @@ jobs:
       - run: git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com" && git config --global user.name "$GITHUB_ACTOR"
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - run: 
-          tag_name=$(echo "${{ github.ref }}" | sed 's/refs\/tags\///')
-          npm version --1.0.30
+      # - run: 
+      #     tag_name=$(echo "${{ github.ref }}" | sed 's/refs\/tags\///')
+      #     npm version --1.0.30
       - run: git push origin HEAD:main --tags
       # - run: npm ci
-      # - name: change version
-      #   run: |
-      #     echo "module.exports = { version: '${{ github.event.release.tag_name }}' }" > version-util.js
+      - name: change version
+        run: |
+          tag_name=$(echo "${{ github.ref }}" | sed 's/refs\/tags\///')
+          echo "module.exports = { version: '$tag_name' }" > version-util.js
       - run: 
           npm ci
           npm run build

@@ -65,7 +65,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - run: npm version --minor
-      - run: git push --tags && git push
+      - run: git push origin HEAD:main --tags
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

@@ -40,8 +40,8 @@ jobs:
       # - run: npm ci
       - name: change version
         run: |
-          # tag_name=$(echo "${{ github.ref }}" | sed 's/refs\/tags\///')
-          # echo "module.exports = { version: '$tag_name' }" > version-util.js
+          tag_name=$(echo "${{ github.ref }}" | sed 's/refs\/tags\///')
+          echo "module.exports = { version: '$tag_name' }" > version-util.js
           npm version --tags
       - run: 
           npm ci

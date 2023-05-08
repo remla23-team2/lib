@@ -79,4 +79,6 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
           # github.token
+      - name: Print tag name
+        run: echo ${{ github.event.release.tag_name }}
 

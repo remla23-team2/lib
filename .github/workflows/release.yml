@@ -60,6 +60,8 @@ jobs:
           scope: "@pengzhi1998"
       - run: npm install
       - run: git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com" && git config --global user.name "$GITHUB_ACTOR"
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - run: npm version --minor
       - run: git push --tags && git push
       - run: npm publish

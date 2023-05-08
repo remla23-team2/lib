@@ -35,7 +35,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - run: 
           tag_name=$(echo "${{ github.ref }}" | sed 's/refs\/tags\///')
-          npm version --$tag_name
+          npm version --1.0.30
       - run: git push origin HEAD:main --tags
       # - run: npm ci
       # - name: change version

@@ -45,7 +45,7 @@ jobs:
       - run: 
           # npm ci
           npm install
-          npm publish
+          npm publish --access public
           npm test
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

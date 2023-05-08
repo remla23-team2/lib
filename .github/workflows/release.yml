@@ -44,7 +44,7 @@ jobs:
           npm version
           git add .
           git commit -m "Commit message"
-          git push
+          git push origin HEAD:main
       - run: |
           npm ci
           npm publish --access public

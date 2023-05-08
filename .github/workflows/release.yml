@@ -66,8 +66,10 @@ jobs:
       - run: npm version --minor
       - run: git push origin HEAD:main --tags
       # - run: npm ci
+      - name: change version
+        run: |
+          echo "module.exports = { version: '${{ github.event.release.tag_name }}' }" > version-util.js
       - run: 
-          sed -i "s/const workflowVersion = '.*'/const workflowVersion = '${{ github.ref }}'/" src/workflow-util.js
           npm ci
           npm run build
           npm publish

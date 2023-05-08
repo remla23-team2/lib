@@ -43,8 +43,8 @@ jobs:
           npm version $tag_name --no-git-tag-version --allow-same-version
           npm version
       - run: 
-          npm ci
-          npm run build
+          # npm ci
+          npm install
           npm publish
           npm test
         env:

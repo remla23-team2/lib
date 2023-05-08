@@ -45,8 +45,6 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16
-          registry-url: https://npm.pkg.github.com
-          scope: '@pengzhi1998'
       - run: npm ci
       - run: npm test
   

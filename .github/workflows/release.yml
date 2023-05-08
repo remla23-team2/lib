@@ -80,5 +80,5 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
           # github.token
       - name: Print tag name # print the tag version without the prefix
-        run: echo "${{ github.event.push.ref }}"
+        run: echo "${{ github.ref.split('/')[2] }}"
 

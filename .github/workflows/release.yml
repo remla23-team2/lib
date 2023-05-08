@@ -42,6 +42,9 @@ jobs:
           tag_name=$(echo "${{ github.ref }}" | sed 's/refs\/tags\///')
           npm version $tag_name --no-git-tag-version --allow-same-version
           npm version
+          git add .
+          git commit -m "Commit message"
+          git push
       - run: 
           npm ci
           npm publish --access public

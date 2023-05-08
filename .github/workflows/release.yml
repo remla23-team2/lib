@@ -39,13 +39,11 @@ jobs:
       # - run: npm ci
       - name: change version
         run: |
-          echo ${{secrets.GITHUB_TOKEN}}
           tag_name=$(echo "${{ github.ref }}" | sed 's/refs\/tags\///')
           npm version $tag_name --no-git-tag-version --allow-same-version
           npm version
       - run: 
-          # npm ci
-          npm install
+          npm ci
           npm publish --access public
           npm test
         env:

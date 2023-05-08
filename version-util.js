@@ -5,5 +5,6 @@ class VersionUtil {
     return version;
   }
 }
+console.log(VersionUtil.getVersion());
 
 module.exports = VersionUtil;

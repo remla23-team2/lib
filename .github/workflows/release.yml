@@ -36,13 +36,13 @@ jobs:
       # - run: 
       #     tag_name=$(echo "${{ github.ref }}" | sed 's/refs\/tags\///')
       #     npm version --1.0.30
-      - run: git push origin HEAD:main --tags
+      # - run: git push origin HEAD:main --tags
       # - run: npm ci
       - name: change version
         run: |
-          tag_name=$(echo "${{ github.ref }}" | sed 's/refs\/tags\///')
-          echo "module.exports = { version: '$tag_name' }" > version-util.js
-          npm version $tag_name -m "Bump version to %s"
+          # tag_name=$(echo "${{ github.ref }}" | sed 's/refs\/tags\///')
+          # echo "module.exports = { version: '$tag_name' }" > version-util.js
+          npm version --tags
       - run: 
           npm ci
           npm run build

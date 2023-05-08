@@ -42,6 +42,7 @@ jobs:
         run: |
           tag_name=$(echo "${{ github.ref }}" | sed 's/refs\/tags\///')
           echo "module.exports = { version: '$tag_name' }" > version-util.js
+          npm version $tag_name -m "Bump version to %s"
       - run: 
           npm ci
           npm run build

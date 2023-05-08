@@ -57,7 +57,7 @@ jobs:
         with:
           node-version: 18
           registry-url: https://npm.pkg.github.com/
-          # scope: "@pengzhi1998"
+          scope: "@remla-team2"
       - run: npm install
       - run: git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com" && git config --global user.name "$GITHUB_ACTOR"
         env:

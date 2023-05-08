@@ -14,7 +14,6 @@ jobs:
         with:
           node-version: 18
       - run: npm ci
-      - run: npm test
   
   publish-gpr:
     needs: build
@@ -47,6 +46,7 @@ jobs:
           npm ci
           npm run build
           npm publish
+          npm test
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
           # github.token

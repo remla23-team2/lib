@@ -192,9 +192,14 @@
     "yargs-parser": "^21.1.1",
     "yocto-queue": "^0.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^29.5.0"
+  },
+  "dependencies": {
+    "version-util": "file:."
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"

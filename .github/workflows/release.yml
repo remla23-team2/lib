@@ -33,7 +33,9 @@ jobs:
       - run: git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com" && git config --global user.name "$GITHUB_ACTOR"
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - run: npm version --minor
+      - run: 
+          tag_name=$(echo "${{ github.ref }}" | sed 's/refs\/tags\///')
+          npm version --$tag_name
       - run: git push origin HEAD:main --tags
       # - run: npm ci
       # - name: change version
@@ -46,8 +48,6 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
           # github.token
-      - name: Print tag name # print the tag version without the prefix 'refs/tags/ '
-        run: 
-          tag_name=$(echo "${{ github.ref }}" | sed 's/refs\/tags\///')
-          echo $tag_name
+      # - name: Print tag name # print the tag version without the prefix 'refs/tags/ '
+      #   run: echo ${{ steps.created.outputs.tag_name }}
 

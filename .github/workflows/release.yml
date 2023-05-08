@@ -45,7 +45,7 @@ jobs:
           git add .
           git commit -m "Commit message"
           git push
-      - run: 
+      - run: |
           npm ci
           npm publish --access public
           npm test

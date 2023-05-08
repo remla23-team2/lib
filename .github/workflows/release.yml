@@ -41,8 +41,7 @@ jobs:
       - name: change version
         run: |
           tag_name=$(echo "${{ github.ref }}" | sed 's/refs\/tags\///')
-          echo "module.exports = { version: '$tag_name' }" > version-util.js
-          npm version --tags
+          npm version $tag_name --no-git-tag-version --allow-same-version
       - run: 
           npm ci
           npm run build

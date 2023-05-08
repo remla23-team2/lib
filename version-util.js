@@ -1,8 +1,8 @@
-const version = require('./package.json').version;
+const packageVersion = require('./package.json').version;
 
 class VersionUtil {
   static getVersion() {
-    return version;
+    return packageVersion;
   }
 }
 

@@ -69,9 +69,9 @@ jobs:
       - run: npm version --minor
       - run: git push origin HEAD:main --tags
       # - run: npm ci
-      - name: change version
-        run: |
-          echo "module.exports = { version: '${{ github.event.release.tag_name }}' }" > version-util.js
+      # - name: change version
+      #   run: |
+      #     echo "module.exports = { version: '${{ github.event.release.tag_name }}' }" > version-util.js
       - run: 
           npm ci
           npm run build
@@ -79,6 +79,6 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
           # github.token
-      - name: Print tag name
-        run: echo "${{ github.ref }}"
+      - name: Print tag name # print the tag version without the prefix
+        run: echo "${{ github.event.push.ref }}"
 

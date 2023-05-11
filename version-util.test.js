@@ -1,7 +1,7 @@
 const VersionUtil = require('./version-util');
 
 test('getVersion returns the correct version', () => {
-  expect(VersionUtil.getVersion()).toBe('1.0.9');
+  expect(VersionUtil.getVersion()).toBe('1.0.11');
 });
 
 console.log('VersionUtil.getVersion() =', VersionUtil.getVersion());

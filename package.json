@@ -1,6 +1,6 @@
 {
   "name": "@remla23-team2/lib2",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Second try for automatic publishing on github",
   "main": "index.js",
   "scripts": {

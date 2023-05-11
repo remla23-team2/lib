@@ -2,7 +2,7 @@
   "name": "@remla23-team2/lib2",
   "version": "1.0.5",
   "description": "Second try for automatic publishing on github",
-  "main": "index.js",
+  "main": "version-util.js.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

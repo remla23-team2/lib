@@ -1,11 +1,9 @@
 {
   "name": "@remla23-team2/lib",
-  "version": "1.0.86",
+  "version": "1.0.87",
   "description": "Contains a version-aware library, i.e., the library can be asked for its version, for example, to include it in log messages or data records. The library may also contain other logic.",
   "main": "version-util.js",
-  "dependencies": {
-    "version-util": "file:."
-  },
+  "dependencies": {},
   "devDependencies": {
     "jest": "^29.5.0"
   },
@@ -13,7 +11,8 @@
     "test": "jest"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com/",
+    "access": "public"
   },
   "repository": {
     "type": "git",
